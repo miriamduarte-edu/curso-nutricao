@@ -308,6 +308,28 @@
   }
 
   /* DEMO BADGE */
+  .compat-note {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #7a6520;
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.0s;
+  }
+
+  .compat-note svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    stroke: #c9a84c;
+  }
+
   .demo-note {
     margin-top: 28px;
     font-size: 12px;
@@ -420,6 +442,11 @@
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
       </a>
+    </div>
+
+    <div class="compat-note">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Ao abrir as unidades poderá aparecer um aviso de compatibilidade do Adobe Captivate — clique <strong>OK</strong> para continuar. O conteúdo funciona correctamente em qualquer browser moderno.
     </div>
 
     <p class="demo-note"><span>Demonstração</span> — Duas unidades seleccionadas de um curso completo</p>
