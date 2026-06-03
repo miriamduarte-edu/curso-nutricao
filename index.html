@@ -216,48 +216,45 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.07);
+    background: var(--green);
+    border: 2px solid var(--green);
     border-radius: 12px;
     padding: 24px 28px;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 16px rgba(61,107,79,0.25);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
-  .unit-card::before {
-    content: '';
+  .unit-card::after {
+    content: 'Clique para abrir';
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--green);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-    transform-origin: bottom;
+    top: 10px;
+    right: 14px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
   }
 
   .unit-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(61,107,79,0.12);
-    border-color: rgba(61,107,79,0.2);
-  }
-
-  .unit-card:hover::before {
-    transform: scaleY(1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 36px rgba(61,107,79,0.35);
+    background: var(--green-light);
+    border-color: var(--green-light);
   }
 
   .unit-number {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: rgba(0,0,0,0.07);
+    font-size: 40px;
+    color: rgba(255,255,255,0.2);
     font-weight: 700;
     line-height: 1;
-    min-width: 48px;
+    min-width: 52px;
   }
 
   .unit-info {
@@ -268,21 +265,22 @@
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 6px;
   }
 
   .unit-title {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
-    color: var(--dark);
+    color: #fff;
   }
 
   .unit-arrow {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--cream);
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,22 +289,22 @@
   }
 
   .unit-card:hover .unit-arrow {
-    background: var(--green);
+    background: #fff;
   }
 
   .unit-arrow svg {
     width: 16px;
     height: 16px;
-    stroke: var(--green);
+    stroke: #fff;
     fill: none;
-    stroke-width: 2;
+    stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
     transition: stroke 0.3s ease;
   }
 
   .unit-card:hover .unit-arrow svg {
-    stroke: #fff;
+    stroke: var(--green);
   }
 
   /* DEMO BADGE */
