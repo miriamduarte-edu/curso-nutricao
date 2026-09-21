@@ -1,5 +1,21 @@
 var btnClicked = "-1";
 
+/* Correcao (2026): recalcula a altura do painel aberto a partir das medidas reais,
+   no momento do clique, para os 5 cabecalhos caberem sempre no ecra (Chrome e Firefox). */
+function fixPaneHeight(){
+	try{
+		var total = $('#content_bg').height();
+		var used = 0;
+		for(var k=0;k<textArray.length;k++){ used += $('#btnHeader'+k).outerHeight(true); }
+		var p = $('.scroll-pane').first();
+		var extra = (parseFloat(p.css('padding-top'))||0)+(parseFloat(p.css('padding-bottom'))||0)+(parseFloat(p.css('margin-top'))||0)+(parseFloat(p.css('margin-bottom'))||0);
+		var h = Math.floor(total - used - extra - 10);
+		if(h < 80){ h = 80; }
+		$('.scroll-pane').css('height', h);
+	}catch(err){}
+}
+
+
 function resizeInteraction(thewidth,theheight) {
 	var scale = 0;
 	thewidth = String(thewidth).replace("px","");
@@ -182,7 +198,7 @@ function resizeInteraction(thewidth,theheight) {
 	
 	$('#reveal').css('width',(680*scaleW));
 	$('#reveal').css('height',(470*scaleH));
-	$('#content_bg').css('height',(305*scaleH));
+	$('#content_bg').css('height',(360*scaleH)); // era 305: aproveita o espaco livre por cima da barra de navegacao
 	
 	$('#reveal').css('margin-left', marginsW+"px");
 	$('#reveal').css('margin-right', marginsW+"px");
@@ -208,6 +224,7 @@ function resizeInteraction(thewidth,theheight) {
 	}
 	resizerCounter=0
 	setOptionsHeight();
+	fixPaneHeight();
 }
 
 
@@ -242,7 +259,8 @@ function addClickHandlers() {
 			}
 	});
 										  
-	$('#content_bg .header a').click(function(e){	
+	$('#content_bg .header a').click(function(e){
+		fixPaneHeight();	
 		pauseSound();
 	//Calculate by how much the container should be set
 		if (btnClicked != e.target.id) //make sure that nothing happens if the same button is clicked
@@ -299,6 +317,7 @@ function addClickHandlers() {
 	$(document).keydown(function(e){	
 	//console.log("key press",btnClicked,e.target.firstChild,e.keyCode)
 		if(e.keyCode  == 13 || e.keyCode  == 32) {
+		fixPaneHeight();
 		//if(e.target.id != "")
 		if (btnClicked != e.target.firstChild.id && isNaN(e.target.id)) //make sure that nothing happens if the same button is clicked
 		{
