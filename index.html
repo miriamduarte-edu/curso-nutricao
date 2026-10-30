@@ -187,59 +187,6 @@
     animation: fadeUp 0.8s ease forwards 0.5s;
   }
 
-  /* PASSWORD BOX */
-  .password-box {
-    background: #fff;
-    border: 1px solid rgba(43,27,107,0.1);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.7s;
-    box-shadow: 0 2px 20px rgba(43,27,107,0.06);
-  }
-
-  .lock-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--indigo);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .lock-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: var(--mint);
-    stroke-width: 2;
-    stroke-linecap: round;
-  }
-
-  .password-info {
-    flex: 1;
-  }
-
-  .password-info p {
-    font-size: 16px;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .password-value {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--indigo);
-    letter-spacing: 1px;
-  }
-
   /* UNITS */
   .units {
     display: flex;
@@ -421,7 +368,6 @@
     .hero { grid-template-columns: 1fr; }
     .hero-left, .hero-right { padding: 60px 24px; }
     .hero-title { font-size: 32px; }
-    .password-box { padding: 22px 20px; }
     .unit-card { padding: 34px 20px 20px; }
   }
 </style>
@@ -461,19 +407,6 @@
 
   <div class="hero-right">
     <p class="section-label">Course Demonstration</p>
-
-    <div class="password-box">
-      <div class="lock-icon">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-      </div>
-      <div class="password-info">
-        <p>To access the course, use the password:</p>
-        <div class="password-value">valoreduca</div>
-      </div>
-    </div>
 
     <div class="units">
       <a class="unit-card" href="unidade05/index.html" target="_blank">
